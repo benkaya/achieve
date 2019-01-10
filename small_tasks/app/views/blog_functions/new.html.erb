@@ -1,0 +1,29 @@
+<h2>Create a new blog function</h2>
+
+ <%= form_with(model: @blog_function, local: true) do |form| %>
+  <% if @blog_function.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @blog_function.errors.count %>errors occurred.</h2>
+      <ul>
+
+      <% @blog_function.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="function_name">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="function_name">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="function_name">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,24 @@
+<h1>List of blog function</h1>
+<p><%= notice %></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>E-mail</th>
+    <th>Content</th>
+  </tr>
+
+<% @blog_functions.each do |blog_function| %>
+  <tr>
+    <td><%= blog_function.name %></td>
+    <td><%= blog_function.email %></td>
+    <td><%= blog_function.content %></td>
+    <td><%= link_to 'Check the Blog function details', blog_function_path(blog_function.id) %></td>
+    <td><%= link_to 'Edit this Blog function', edit_blog_function_path(blog_function.id) %></td>
+    <td><%= link_to "Delete this blog function", blog_function_path(blog_function.id), method: :delete ,data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to 'Post a new blog function', new_blog_function_path %>
